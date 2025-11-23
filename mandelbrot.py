@@ -7,6 +7,7 @@ from tqdm import tqdm
 
 # Modules
 import colors
+from colors import hexToRGB
 
 def mandelbrot(pixel: list[float], offset_real: float, offset_img: float, scale: float, width: int, height: int, max_iterations: int):
     '''
@@ -86,6 +87,8 @@ def generateFrame(offset_real: float, offset_img: float, scale: float, width: in
     # Generate color palette of RGB colors
     colorpalette = colors.BSplinePalette(colors_RGB=colorlist, k=k, n_colors=max_iterations)
 
+    print('Generating Mandelbrot frame with the following settings:')
+    print(f'Resolution: {width}x{height}, scale: {scale}, max iterations: {max_iterations}')
     # Color pixels according to the iteration reached
     for i in tqdm(range(len(pixels))):
         pixel = pixels[i]
@@ -99,13 +102,8 @@ def generateFrame(offset_real: float, offset_img: float, scale: float, width: in
     Image.fromarray(img.astype("uint8"), mode="RGB").save(save_path)
 
 
-    
-    
-# For the color gradient, RGB values
-COLORLIST = [
-    [0,0,0],
-    [255, 255, 255],
-    [255, 0, 0]
-]
+# For the color gradient
+COLORLIST = ['#000000', '#253900', '#08CB00']
+COLORLIST = [hexToRGB(hex) for hex in COLORLIST]
 
-generateFrame(offset_real=0, offset_img=0, scale=0.005, width=4320, height=4320, max_iterations=100, save_path="img/test.png", colorlist=COLORLIST, k=2)
+generateFrame(offset_real=0, offset_img=0, scale=0.001, width=4320, height=4320, max_iterations=30, save_path="img/test.png", colorlist=COLORLIST, k=2)
