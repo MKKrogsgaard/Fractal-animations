@@ -79,6 +79,7 @@ def generateFrame(offset_real: float, offset_img: float, scale: float, width: in
         k (int): The degree of the B-splines used to compute the color gradient
     '''
     # Initialize image and pixel coordinates
+    # Notice that heigth and width are swapped because PIL expects that orientation when converting from an array to an image!
     img = np.zeros((height, width, 3), dtype=np.uint8)
     pixels = np.array([[x, y] for x in range(width) for y in range(height)])
 
@@ -107,4 +108,4 @@ COLORLIST = [
     [255, 0, 0]
 ]
 
-generateFrame(offset_real=0, offset_img=0, scale=0.005, width=1080, height=1080, max_iterations=100, save_path="img/test.png", colorlist=COLORLIST, k=2)
+generateFrame(offset_real=0, offset_img=0, scale=0.005, width=4320, height=4320, max_iterations=100, save_path="img/test.png", colorlist=COLORLIST, k=2)
