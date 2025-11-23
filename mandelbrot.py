@@ -54,9 +54,9 @@ def mandelbrot(pixel: list[float], offset_real: float, offset_img: float, scale:
         return 0 # If the current pixel is out of bounds
     
 
-def generateFrame(offset_real: float, offset_img: float, scale: float, width: int, height: int, max_iterations: int, save_path: str, colorlist: list, k: int):
+def generateFrame(offset_real: float, offset_img: float, scale: float, width: int, height: int, max_iterations: int, file_path: str, colorlist: list, k: int):
     '''
-    Calculates wether the pixels in the image are in the Mandelbrot set for a given number of iterations. Saves the resulting frame.
+    Calculates whether each pixel in the image is in the Mandelbrot set for a given number of iterations. Saves the resulting frame.
 
     args:
         x, y (float): Pixel coordinates.
@@ -99,11 +99,11 @@ def generateFrame(offset_real: float, offset_img: float, scale: float, width: in
         img[y, x, :] = colorpalette[iteration]
     
     # Convert to uint8 and save the image
-    Image.fromarray(img.astype("uint8"), mode="RGB").save(save_path)
+    Image.fromarray(img.astype("uint8"), mode="RGB").save(file_path)
 
 
 # For the color gradient
-COLORLIST = ['#000000', '#253900', '#08CB00']
+COLORLIST = ['#000000', "#390000", "#E20000"]
 COLORLIST = [hexToRGB(hex) for hex in COLORLIST]
 
-generateFrame(offset_real=0, offset_img=0, scale=0.001, width=4320, height=4320, max_iterations=30, save_path="img/test.png", colorlist=COLORLIST, k=2)
+generateFrame(offset_real=0, offset_img=0, scale=0.001, width=4320, height=4320, max_iterations=1, file_path="img/test.png", colorlist=COLORLIST, k=2)
