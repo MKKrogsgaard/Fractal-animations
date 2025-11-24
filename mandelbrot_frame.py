@@ -97,4 +97,4 @@ def generateFrame(offset_real: float, offset_img: float, scale: float, width: in
 COLORLIST = ['#000000', "#390000", "#E20000"]
 COLORLIST = [hexToRGB(hex) for hex in COLORLIST]
 
-generateFrame(offset_real=0, offset_img=0, scale=0.001, width=4320, height=4320, max_iterations=1, file_path="img/test.png", colorlist=COLORLIST, k=2)
+generateFrame(offset_real=0, offset_img=0, scale=0.001, width=4320, height=4320, max_iterations=1, file_path='img/test.jpg', colorlist=COLORLIST, k=2)
