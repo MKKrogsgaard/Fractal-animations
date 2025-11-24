@@ -11,7 +11,7 @@ from colors import hexToRGB
 
 def mandelbrot(pixel: list[float], offset_real: float, offset_img: float, scale: float, width: int, height: int, max_iterations: int):
     '''
-    Computes wether a given pixel is in the Mandelbrot set. For plotting.
+    Computes wether a given pixel is in the Mandelbrot set and colors the pixel according to the number of iterations it takes before it is out of bounds.
 
     args:
         pixel (list[float]): Pixel coordinates
@@ -60,23 +60,14 @@ def generateFrame(offset_real: float, offset_img: float, scale: float, width: in
 
     args:
         x, y (float): Pixel coordinates.
-
         offset_real (float): The real offset applied to c. The computation is done on c + offset.
-
         offset_img (float): The imaginary offset applied to c. The computation is done on c + offset.
-
         scale: (float): Determines the scale of the resulting plot.
-
         width (float): The width of the resulting plot.
-
         height (float): The height of the resulting plot.
-
         max_iterations (int): The max number of iterations to apply the Mandelbrot function for.
-
         save_path (str): Location to save the image at.
-
         colorlist (list): A list of RGB color values to use for the color gradient.
-
         k (int): The degree of the B-splines used to compute the color gradient
     '''
     # Initialize image and pixel coordinates
