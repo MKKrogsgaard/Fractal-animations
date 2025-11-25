@@ -5,7 +5,7 @@
 
  # Example animations
 
-https://github.com/user-attachments/assets/4781f597-473d-4c03-ad27-de84bdac3805
+https://github.com/user-attachments/assets/78036b27-ece4-4082-a6d1-8bb8a215c237
 
 https://github.com/user-attachments/assets/2eb1645a-a02d-4614-b866-8b6630ba744d
 
