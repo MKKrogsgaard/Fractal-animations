@@ -141,7 +141,7 @@ def generateVideo(offset_real: float, offset_img: float, scale: float, width: in
         raise(RuntimeError('No CUDA GPU available!'))
 
     frames_folder = 'img/frames'
-    video_path = 'tricorn_animation.mp4'
+    video_path = 'img/tricorn_animation.mp4'
 
     # Prepare frames folder if it doesn't exist already
     if not os.path.isdir(frames_folder):
