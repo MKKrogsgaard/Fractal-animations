@@ -1,7 +1,7 @@
 # Fractal animations
- Animations of the Mandelbrot set and (possibly) other fractals. The animation can be created with `mandelbrot_video_cuda.py`, which depends on numba cuda and hence only works on NVIDIA GPUs.
+ Animations of the Mandelbrot set and (possibly) other fractals. Files that end in `_video_cuda.py` generate animations. They use numba cuda to parallelize the computation of whether a given pixel is in the fractal, and hence only works on NVIDIA GPUs.
 
- `mandelbrot_frame.py` uses only the CPU to generate a single frame, and does not require a NVIDIA GPU.
+ FIles that end in `_frame.py` generate a single frame. They only use the CPU and do not require a NVIDIA GPU, but they are quite slow, especially for large resolutions.
 
  # Example animation
 
